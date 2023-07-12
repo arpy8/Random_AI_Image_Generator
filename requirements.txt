@@ -1,4 +1,4 @@
 openai==0.27.8
 stqdm==0.0.5
 streamlit==1.24.1
-~treamlit==1.24.0
+
