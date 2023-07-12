@@ -1,9 +1,14 @@
 import os
 import openai
 import urllib.request
+import streamlit as st
 
-openai.api_key = os.getenv("OPENAI_API")
-secret_text = os.getenv("DALLE_TEXT")
+# openai.api_key = os.getenv("OPENAI_API")
+# secret_text = os.getenv("DALLE_TEXT")
+
+openai.api_key = st.secrets["OPENAI_API"]
+secret_text = st.secrets["DALLE_TEXT"]
+
 prompt_generated = False
 image_generated = False
 
