@@ -32,9 +32,12 @@ prompt_loading_text.caption("# Finalizing everything...")
 for _ in stqdm(range(50)):
     sleep(0.3)
 
-prompt_loading_text.caption("#  Here's a random generated ai generated image")
+prompt_loading_text.caption("#  Here's a random ai generated image")
 
 generate_image()
 st.image("temp.png")
-st.write(f"""#### Prompt: """)
-st.caption(f"""{str(temp_prompt)}""")
+
+if temp_prompt.split()[0] == "Create":
+    temp_prompt = temp_prompt.replace("Create", "")
+st.caption(f"""{temp_prompt.capitalize()}""")
+
